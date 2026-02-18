@@ -1,7 +1,3 @@
-// ============================================
-// PORTFOLIO DATA - VERSION FINALE
-// ============================================
-
 export const personalInfo = {
   name: "CHIBOUB Amine",
   initials: "AC",
