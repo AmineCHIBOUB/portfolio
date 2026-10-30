@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import { projects } from '../../data/portfolioData';
 import ProjectCard from '../ui/ProjectCard';
@@ -43,6 +43,23 @@ const Projects = () => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); previous(); }
   };
 
+  // Glisser au doigt (mobile) : vers la gauche ou le haut = suivante, vers la droite ou le bas = précédente
+  const touchStart = useRef(null);
+  const onTouchStart = (e) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+  };
+  const onTouchEnd = (e) => {
+    if (!touchStart.current) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.current.x;
+    const dy = t.clientY - touchStart.current.y;
+    touchStart.current = null;
+    if (Math.max(Math.abs(dx), Math.abs(dy)) < 50) return;
+    const forward = Math.abs(dx) > Math.abs(dy) ? dx < 0 : dy < 0;
+    forward ? next() : previous();
+  };
+
   const current = order[0];
 
   return (
@@ -51,7 +68,7 @@ const Projects = () => {
         <h2 className="section-title">Expériences professionnelles</h2>
 
         <div className="deck-layout">
-          <div className="deck" tabIndex={0} onKeyDown={onKeyDown} aria-roledescription="carrousel" aria-label="Expériences professionnelles">
+          <div className="deck" tabIndex={0} onKeyDown={onKeyDown} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd} aria-roledescription="carrousel" aria-label="Expériences professionnelles">
             {projects.map((project, index) => {
               const depth = order.indexOf(index);
               const anim = moving?.index === index ? `deck-${moving.direction}` : '';

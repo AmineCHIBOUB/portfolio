@@ -204,3 +204,7 @@
     animation: none;
   }
 }
+
+.deck {
+  touch-action: pan-y; /* garde le défilement vertical de la page */
+}
