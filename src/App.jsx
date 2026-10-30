@@ -12,6 +12,7 @@ import Contact from './components/sections/Contact';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Background from './components/layout/Background';
+import ScrollExtras from './components/layout/ScrollExtras';
 
 const App = () => {
   useEffect(() => {
@@ -37,6 +38,7 @@ const App = () => {
   return (
     <div className="app">
       <Background />
+      <ScrollExtras />
       <Header />
       <main>
         <Hero />

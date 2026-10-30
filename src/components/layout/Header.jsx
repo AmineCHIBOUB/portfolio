@@ -6,14 +6,7 @@ import './Header.css';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [activeSection, setActiveSection] = useState('');
 
   const navItems = [
     { name: 'À propos', href: '#about' },
@@ -23,6 +16,26 @@ const Header = () => {
     { name: 'Parcours', href: '#journey' },
     { name: 'Contact', href: '#contact' }
   ];
+
+  useEffect(() => {
+    // Section active : la dernière dont le haut a dépassé le tiers supérieur de l'écran
+    const ids = navItems.map((item) => item.href.slice(1));
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      const line = window.innerHeight / 3;
+      let current = '';
+      ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) current = id;
+      });
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+      setActiveSection(atBottom ? ids[ids.length - 1] : current);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -39,7 +52,12 @@ const Header = () => {
           <ul className="nav-list">
             {navItems.map((item) => (
               <li key={item.name} className="nav-item">
-                <a href={item.href} onClick={() => setIsMenuOpen(false)}>
+                <a
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={activeSection === item.href.slice(1) ? 'active' : undefined}
+                  aria-current={activeSection === item.href.slice(1) ? 'true' : undefined}
+                >
                   {item.name}
                 </a>
               </li>

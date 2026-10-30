@@ -1,0 +1,26 @@
+.typewriter {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.6em; /* la ligne garde sa hauteur quand le texte est effacé */
+}
+
+.typewriter-text {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.typewriter-cursor {
+  margin-left: 2px;
+  color: #06b6d4;
+  font-weight: 300;
+  animation: typewriter-blink 1s steps(1) infinite;
+}
+
+@keyframes typewriter-blink {
+  50% {
+    opacity: 0;
+  }
+}

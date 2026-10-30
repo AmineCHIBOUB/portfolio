@@ -1,6 +1,7 @@
 import React from 'react';
 import { personalInfo } from '../../data/portfolioData';
 import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaFileDownload } from 'react-icons/fa';
+import Typewriter from '../ui/Typewriter';
 import './Hero.css';
 
 const Hero = () => {
@@ -21,12 +22,7 @@ const Hero = () => {
           <h2 className="hero-status">{personalInfo.status}</h2>
           
           <div className="hero-titles">
-            {personalInfo.titles.map((title, index) => (
-              <span key={index} className="hero-title">
-                {title}
-                {index < personalInfo.titles.length - 1 && ' • '}
-              </span>
-            ))}
+            <Typewriter words={personalInfo.titles} />
           </div>
 
           <div className="hero-location">

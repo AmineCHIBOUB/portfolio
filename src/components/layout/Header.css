@@ -72,11 +72,13 @@
   transition: var(--transition);
 }
 
-.nav-item a:hover {
+.nav-item a:hover,
+.nav-item a.active {
   color: var(--text-primary);
 }
 
-.nav-item a:hover::after {
+.nav-item a:hover::after,
+.nav-item a.active::after {
   width: 100%;
 }
 
