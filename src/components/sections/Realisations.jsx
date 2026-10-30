@@ -20,9 +20,13 @@ const Realisations = () => {
                   <span key={tech} className="badge">{tech}</span>
                 ))}
               </div>
-              <a href={item.repo} target="_blank" rel="noopener noreferrer" className="btn btn-outline realisation-link">
-                <FaGithub /> Voir le code
-              </a>
+              {item.repo ? (
+                <a href={item.repo} target="_blank" rel="noopener noreferrer" className="btn btn-outline realisation-link">
+                  <FaGithub /> Voir le code
+                </a>
+              ) : (
+                <span className="badge realisation-link">Code privé</span>
+              )}
             </article>
           ))}
         </div>

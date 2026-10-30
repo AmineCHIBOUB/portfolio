@@ -230,6 +230,36 @@ export const realisations = [
     repo: "https://github.com/AmineCHIBOUB/-gestion-RH-"
   },
   {
+    title: "Instaclone",
+    description: "Réseau social de photos inspiré d'Instagram, en temps réel : publications avec filtres, stories, j'aime, commentaires, abonnements, notifications et messages privés.",
+    stack: ["React", "Firebase", "Material UI", "Vite"],
+    repo: null
+  },
+  {
+    title: "YouMusic",
+    description: "Application de partage de musique : catalogue avec lecteur YouTube, favoris, playlists, droits par propriétaire et back-office d'administration. Tests automatisés et CI.",
+    stack: ["Symfony", "Doctrine", "Twig", "EasyAdmin"],
+    repo: "https://github.com/AmineCHIBOUB/symfony-main"
+  },
+  {
+    title: "SushiProjet",
+    description: "Site de commande en ligne et back-office de restaurant : gestion des stocks, factures avec TVA, tableau de bord du chiffre d'affaires et export CSV.",
+    stack: ["Java EE", "Servlets", "JSP", "Bootstrap"],
+    repo: "https://github.com/AmineCHIBOUB/SushiProjet"
+  },
+  {
+    title: "Formation Management",
+    description: "Gestion d'un centre de formation : sessions, inscriptions et liste d'attente automatique, avec les patterns Singleton, Factory, State et Observer.",
+    stack: ["Java", "JavaFX", "JUnit"],
+    repo: "https://github.com/AmineCHIBOUB/formation-management"
+  },
+  {
+    title: "GeoRDV",
+    description: "Application Android d'invitation à des rendez-vous par SMS avec la position GPS : réponses, itinéraire, historique et rappels.",
+    stack: ["Android", "Java", "SQLite"],
+    repo: "https://github.com/AmineCHIBOUB/rendez-vous-geolocalises"
+  },
+  {
     title: "Portfolio",
     description: "Ce site : présentation de mon parcours, déployé automatiquement sur Netlify à chaque mise à jour.",
     stack: ["React", "Vite", "Netlify"],
