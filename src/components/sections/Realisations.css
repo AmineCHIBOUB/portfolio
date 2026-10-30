@@ -18,7 +18,9 @@
   display: none;
 }
 
-.realisation-card {
+/* Sélecteur renforcé : le style global .card impose height: 100%, ce qui empêche
+   les cartes de s'étirer à la hauteur de la plus grande */
+.realisations-track > .realisation-card {
   flex: 0 0 calc((100% - 2 * var(--spacing-lg)) / 3);
   scroll-snap-align: start;
   height: auto;
@@ -130,13 +132,13 @@
 }
 
 @media (max-width: 1024px) {
-  .realisation-card {
+  .realisations-track > .realisation-card {
     flex-basis: calc((100% - var(--spacing-lg)) / 2);
   }
 }
 
 @media (max-width: 640px) {
-  .realisation-card {
+  .realisations-track > .realisation-card {
     flex-basis: 85%;
   }
 }
