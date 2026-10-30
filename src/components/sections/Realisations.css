@@ -1,10 +1,25 @@
-.realisations-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* Carrousel : toutes les cartes sur une ligne, défilement horizontal avec aimantation */
+.realisations-carousel {
+  position: relative;
+}
+
+.realisations-track {
+  display: flex;
   gap: var(--spacing-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: var(--spacing-sm) 2px var(--spacing-md);
+  scrollbar-width: none;
+}
+
+.realisations-track::-webkit-scrollbar {
+  display: none;
 }
 
 .realisation-card {
+  flex: 0 0 calc((100% - 2 * var(--spacing-lg)) / 3);
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -43,8 +58,69 @@
   align-self: flex-start;
 }
 
+/* Flèches et points de navigation */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.carousel-arrow {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--accent-secondary);
+  border: 1px solid var(--accent-primary);
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--accent-glow);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 999px;
+  border: 0;
+  background: var(--text-secondary);
+  opacity: 0.35;
+  cursor: pointer;
+  transition: width 0.25s, opacity 0.25s;
+}
+
+.carousel-dot.active {
+  width: 24px;
+  opacity: 1;
+  background: var(--accent-primary);
+}
+
 @media (max-width: 1024px) {
-  .realisations-grid {
-    grid-template-columns: 1fr;
+  .realisation-card {
+    flex-basis: calc((100% - var(--spacing-lg)) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .realisation-card {
+    flex-basis: 85%;
   }
 }
