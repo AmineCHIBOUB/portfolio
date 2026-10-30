@@ -43,7 +43,8 @@ const Projects = () => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); previous(); }
   };
 
-  // Glisser au doigt (mobile) : vers la gauche ou le haut = suivante, vers la droite ou le bas = précédente
+  // Glisser au doigt (mobile) : vers la gauche = suivante, vers la droite = précédente.
+  // Les gestes verticaux restent réservés au défilement de la page.
   const touchStart = useRef(null);
   const onTouchStart = (e) => {
     const t = e.touches[0];
@@ -55,9 +56,9 @@ const Projects = () => {
     const dx = t.clientX - touchStart.current.x;
     const dy = t.clientY - touchStart.current.y;
     touchStart.current = null;
-    if (Math.max(Math.abs(dx), Math.abs(dy)) < 50) return;
-    const forward = Math.abs(dx) > Math.abs(dy) ? dx < 0 : dy < 0;
-    forward ? next() : previous();
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+    if (dx < 0) next();
+    else previous();
   };
 
   const current = order[0];
