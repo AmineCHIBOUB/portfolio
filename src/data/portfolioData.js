@@ -13,6 +13,8 @@ export const personalInfo = {
   phone: "",
   linkedin: "https://www.linkedin.com/in/mohamed-amine-chiboub/",
   github: "https://github.com/AmineCHIBOUB",
+  // Mettre le chemin du PDF (ex. "/cv-amine-chiboub.pdf" dans public/) pour afficher le bouton
+  cv: "",
   availability: "Actuellement consultant ERP chez AeroDIODE, en parallèle de mon Master 2 MIAGE.",
   about: `Un ERP bien paramétré fait gagner du temps à toute l'entreprise. Mal pensé, il en fait perdre.
 
@@ -195,3 +197,42 @@ export const contact = {
   location: "Bordeaux, France",
   mobility: "Nouvelle-Aquitaine / Île-de-France / Toulouse"
 };
+
+// Chiffres clés (issus du profil LinkedIn)
+export const stats = [
+  { value: 5, suffix: "", label: "expériences professionnelles" },
+  { value: 2, suffix: "", label: "ERP : Dolibarr et Odoo" },
+  { value: 30, suffix: "+", label: "user stories rédigées" },
+  { value: 10, suffix: "+", label: "utilisateurs formés" }
+];
+
+// Méthode de travail sur un projet ERP
+export const method = [
+  { step: "Analyse", text: "Ateliers avec les équipes métier, recueil des besoins et cahier des charges" },
+  { step: "Paramétrage", text: "Configuration de l'ERP : workflows, droits utilisateurs, données de référence" },
+  { step: "Développement", text: "Modules sur mesure en PHP et SQL, sans toucher au cœur de l'ERP" },
+  { step: "Recette", text: "Tests fonctionnels sur un environnement de test avant chaque mise en production" },
+  { step: "Formation", text: "Documentation, démonstrations et accompagnement des utilisateurs" }
+];
+
+// Projets personnels publiés sur GitHub
+export const realisations = [
+  {
+    title: "Gestion de chantier",
+    description: "Application de gestion de chantiers : équipes, affectations, pointage, congés et habilitations, avec une API sécurisée par jeton JWT.",
+    stack: ["Laravel", "React", "MySQL", "JWT"],
+    repo: "https://github.com/AmineCHIBOUB/gestion-chantier"
+  },
+  {
+    title: "Gestion RH",
+    description: "Application RH avec espaces administrateur, RH et employé : congés, pointage, bulletins de paie en PDF et rapports.",
+    stack: ["Laravel", "Angular", "MySQL", "Sanctum"],
+    repo: "https://github.com/AmineCHIBOUB/-gestion-RH-"
+  },
+  {
+    title: "Portfolio",
+    description: "Ce site : présentation de mon parcours, déployé automatiquement sur Netlify à chaque mise à jour.",
+    stack: ["React", "Vite", "Netlify"],
+    repo: "https://github.com/AmineCHIBOUB/portfolio"
+  }
+];

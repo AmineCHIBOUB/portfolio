@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../../data/portfolioData';
-import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaFileDownload } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
@@ -41,6 +41,11 @@ const Hero = () => {
 
           <div className="hero-actions">
             <a href="#contact" className="btn btn-primary">Me contacter</a>
+            {personalInfo.cv && (
+              <a href={personalInfo.cv} download className="btn btn-outline">
+                <FaFileDownload /> Mon CV
+              </a>
+            )}
             <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
               <FaLinkedin /> LinkedIn
             </a>

@@ -2,7 +2,10 @@ import React, { useEffect } from 'react';
 import './styles/global.css';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
+import Stats from './components/sections/Stats';
+import Method from './components/sections/Method';
 import Projects from './components/sections/Projects';
+import Realisations from './components/sections/Realisations';
 import Skills from './components/sections/Skills';
 import Journey from './components/sections/Journey';
 import Contact from './components/sections/Contact';
@@ -38,7 +41,10 @@ const App = () => {
       <main>
         <Hero />
         <About />
+        <Stats />
+        <Method />
         <Projects />
+        <Realisations />
         <Skills />
         <Journey />
         <Contact />
