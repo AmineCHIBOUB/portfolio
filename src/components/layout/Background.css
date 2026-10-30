@@ -26,7 +26,7 @@
   height: 45vw;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.18;
+  opacity: 0.25;
   animation: glowDrift 22s ease-in-out infinite alternate;
 }
 
@@ -52,10 +52,10 @@
 .bg-beam {
   position: absolute;
   top: -20vh;
-  width: 1px;
-  height: 45vh;
+  width: 2px;
+  height: 55vh;
   background: linear-gradient(to bottom, transparent, var(--accent-secondary), transparent);
-  box-shadow: 0 0 8px var(--accent-secondary);
+  box-shadow: 0 0 12px 1px var(--accent-secondary), 0 0 30px var(--accent-secondary);
   opacity: 0;
   transform: rotate(-35deg);
   animation: beamFall 9s linear infinite;
@@ -63,7 +63,7 @@
 
 .bg-beam:nth-child(odd) {
   background: linear-gradient(to bottom, transparent, var(--accent-primary), transparent);
-  box-shadow: 0 0 8px var(--accent-primary);
+  box-shadow: 0 0 12px 1px var(--accent-primary), 0 0 30px var(--accent-primary);
 }
 
 .bg-beam-1 { left: 10%; animation-delay: 0s; }
@@ -74,11 +74,17 @@
 .bg-beam-6 { left: 85%; animation-delay: -3.5s; animation-duration: 10s; }
 .bg-beam-7 { left: 95%; animation-delay: -8s; }
 .bg-beam-8 { left: 60%; animation-delay: -4.5s; animation-duration: 13s; }
+.bg-beam-9 { left: 18%; animation-delay: -7s; animation-duration: 8s; }
+.bg-beam-10 { left: 33%; animation-delay: -9.5s; }
+.bg-beam-11 { left: 48%; animation-delay: -0.8s; animation-duration: 10.5s; }
+.bg-beam-12 { left: 78%; animation-delay: -5.8s; animation-duration: 9.5s; }
+.bg-beam-13 { left: 90%; animation-delay: -2s; animation-duration: 12.5s; }
+.bg-beam-14 { left: 5%; animation-delay: -10s; animation-duration: 11.5s; }
 
 @keyframes beamFall {
   0% { opacity: 0; transform: translate(0, 0) rotate(-35deg); }
-  10% { opacity: 0.7; }
-  70% { opacity: 0.5; }
+  10% { opacity: 1; }
+  70% { opacity: 0.85; }
   100% { opacity: 0; transform: translate(-45vh, 140vh) rotate(-35deg); }
 }
 
@@ -94,7 +100,7 @@
 }
 
 @media (max-width: 768px) {
-  .bg-beam-2, .bg-beam-4, .bg-beam-6, .bg-beam-8 {
+  .bg-beam-2, .bg-beam-4, .bg-beam-6, .bg-beam-8, .bg-beam-10, .bg-beam-12, .bg-beam-14 {
     display: none;
   }
 }

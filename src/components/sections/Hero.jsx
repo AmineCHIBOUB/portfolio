@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="availability-pulse"></span>
-            À la recherche d’un stage de 4 mois dès le 1er mai 2026
+            Consultant ERP chez AeroDIODE · Master 2 MIAGE
           </div>
           
           <h1 className="hero-name">

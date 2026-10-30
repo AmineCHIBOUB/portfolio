@@ -1,7 +1,48 @@
 .project-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-xl);
+  height: auto;
+  border-left: 3px solid var(--accent-primary);
+}
+
+.project-aside {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: var(--spacing-lg);
+  padding-right: var(--spacing-xl);
+  border-right: 1px solid var(--border-color);
+}
+
+.project-meta {
+  flex-direction: column;
+  gap: 0.25rem !important;
+}
+
+.project-context {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+.project-missions ul {
+  margin-bottom: 0 !important;
+}
+
+.project-stack {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 860px) {
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+  .project-aside {
+    padding-right: 0;
+    border-right: none;
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 .project-header {

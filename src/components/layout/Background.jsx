@@ -1,7 +1,7 @@
 import React from 'react';
 import './Background.css';
 
-const BEAMS = 8;
+const BEAMS = 14;
 
 // Fond animé : grille, halos lumineux et faisceaux laser
 const Background = () => {

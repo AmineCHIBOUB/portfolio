@@ -4,42 +4,44 @@ import './ProjectCard.css';
 const ProjectCard = ({ project }) => {
   return (
     <div className="project-card card">
-      <div className="project-header">
+      {/* Colonne gauche : poste, entreprise, dates et compétences */}
+      <div className="project-aside">
         <h3 className="project-title">{project.title}</h3>
         <div className="project-meta">
           <span className="project-company">{project.company}</span>
           <span className="project-period">{project.period}</span>
           {project.location && <span className="project-location">{project.location}</span>}
         </div>
-      </div>
 
-      <div className="project-context">
-        <p>{project.context}</p>
-      </div>
-
-      <div className="project-missions">
-        <h4>Missions</h4>
-        <ul>
-          {project.missions.map((mission, index) => (
-            <li key={index}>{mission}</li>
-          ))}
-        </ul>
-      </div>
-
-      {project.result && (
-        <div className="project-result">
-          <h4>Résultat</h4>
-          <p className="result-highlight">{project.result}</p>
+        <div className="project-stack">
+          <h4>Compétences</h4>
+          <div className="stack-tags">
+            {project.stack.map((tech, index) => (
+              <span key={index} className="badge">{tech}</span>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
 
-      <div className="project-stack">
-        <h4>Compétences</h4>
-        <div className="stack-tags">
-          {project.stack.map((tech, index) => (
-            <span key={index} className="badge">{tech}</span>
-          ))}
+      {/* Colonne droite : contexte et missions */}
+      <div className="project-body">
+        <p className="project-context">{project.context}</p>
+
+        <div className="project-missions">
+          <h4>Missions</h4>
+          <ul>
+            {project.missions.map((mission, index) => (
+              <li key={index}>{mission}</li>
+            ))}
+          </ul>
         </div>
+
+        {project.result && (
+          <div className="project-result">
+            <h4>Résultat</h4>
+            <p className="result-highlight">{project.result}</p>
+          </div>
+        )}
       </div>
     </div>
   );
