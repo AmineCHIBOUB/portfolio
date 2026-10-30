@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { contact, personalInfo } from '../../data/portfolioData';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -74,16 +74,6 @@ const Contact = () => {
                   <span className="contact-label">Email</span>
                   <a href={`mailto:${contact.email}`} className="contact-value">
                     {contact.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="contact-detail-item">
-                <FaPhone className="contact-icon" />
-                <div>
-                  <span className="contact-label">Téléphone</span>
-                  <a href={`tel:${contact.phone}`} className="contact-value">
-                    {contact.phone}
                   </a>
                 </div>
               </div>

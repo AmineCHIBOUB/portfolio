@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../../data/portfolioData';
-import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
@@ -36,10 +36,6 @@ const Hero = () => {
           <div className="hero-contact-info">
             <a href={`mailto:${personalInfo.email}`} className="hero-contact-item">
               <FaEnvelope /> {personalInfo.email}
-            </a>
-            <span className="hero-contact-separator">|</span>
-            <a href={`tel:${personalInfo.phone}`} className="hero-contact-item">
-              <FaPhone /> {personalInfo.phone}
             </a>
           </div>
 

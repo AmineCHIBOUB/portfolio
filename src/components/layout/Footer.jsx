@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../../data/portfolioData';
-import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -19,10 +19,6 @@ const Footer = () => {
             <div className="footer-contact-item">
               <FaEnvelope />
               <a href={`mailto:${personalInfo.email}`}>{personalInfo.email}</a>
-            </div>
-            <div className="footer-contact-item">
-              <FaPhone />
-              <a href={`tel:${personalInfo.phone}`}>{personalInfo.phone}</a>
             </div>
             <div className="footer-contact-item">
               <FaMapMarkerAlt />
