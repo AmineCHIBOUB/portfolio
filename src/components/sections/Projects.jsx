@@ -4,7 +4,7 @@ import { projects } from '../../data/portfolioData';
 import ProjectCard from '../ui/ProjectCard';
 import './Projects.css';
 
-const ANIMATION_MS = 450;
+const ANIMATION_MS = 700;
 
 // Expériences présentées comme un paquet de cartes : la carte du dessus est lisible,
 // les suivantes dépassent derrière. Les flèches font tourner le paquet.
