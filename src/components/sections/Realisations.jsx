@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FaGithub, FaCode, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGithub, FaCode, FaChevronLeft, FaChevronRight, FaLock } from 'react-icons/fa';
 import { realisations } from '../../data/portfolioData';
 import './Realisations.css';
 
@@ -59,7 +59,9 @@ const Realisations = () => {
                     <FaGithub /> Voir le code
                   </a>
                 ) : (
-                  <span className="badge realisation-link">Code privé</span>
+                  <span className="btn btn-outline realisation-link realisation-private">
+                    <FaLock /> Code privé
+                  </span>
                 )}
               </article>
             ))}

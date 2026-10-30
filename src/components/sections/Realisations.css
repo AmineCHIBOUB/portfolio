@@ -5,6 +5,7 @@
 
 .realisations-track {
   display: flex;
+  align-items: stretch;
   gap: var(--spacing-lg);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -20,6 +21,8 @@
 .realisation-card {
   flex: 0 0 calc((100% - 2 * var(--spacing-lg)) / 3);
   scroll-snap-align: start;
+  height: auto;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
@@ -48,14 +51,27 @@
   flex-grow: 1;
 }
 
+/* Badges et bouton calés en bas : même position sur toutes les cartes */
 .realisation-card .stack-tags {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-end;
   gap: var(--spacing-xs);
+  margin-top: auto;
+  min-height: 5.2rem;
 }
 
 .realisation-link {
   align-self: flex-start;
+}
+
+.realisation-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.55;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* Flèches et points de navigation */
