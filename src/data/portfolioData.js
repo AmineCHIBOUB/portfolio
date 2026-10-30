@@ -37,8 +37,7 @@ export const projects = [
       "Gestion d'un environnement multi-sociétés",
       "Déploiements fiables : recette sur clone, Git, GitLab et CI/CD, documentation et démonstrations aux utilisateurs"
     ],
-    result: "Des évolutions livrées sans interrompre l'activité, grâce à une recette systématique sur un environnement de test avant chaque mise en production.",
-    stack: ["Dolibarr", "PHP", "SQL", "Factur-X", "SEPA", "Git", "GitLab", "CI/CD"]
+    stack: ["Dolibarr", "ERP", "PHP", "SQL", "Analyse des besoins", "Git", "GitLab"]
   },
   {
     id: 2,
@@ -52,24 +51,23 @@ export const projects = [
       "Conception et exécution des tests fonctionnels, suivi des anomalies jusqu'à leur correction",
       "Interface entre les équipes métier et techniques : traduction des besoins en spécifications claires pour les développeurs"
     ],
-    result: "Modules Facturation et Ressources Humaines d'Odoo paramétrés et testés pour la gestion interne de l'entreprise.",
-    stack: ["Odoo", "ERP", "AMOA", "Cahier des charges", "Tests fonctionnels"]
+    stack: ["Odoo", "ERP", "AMOA", "Analyse des besoins", "Tests fonctionnels"]
   },
   {
     id: 3,
-    title: "Assistant Chef de Projet IT",
+    title: "Assistant chef de projet IT",
     company: "RAKOPS SOLUTIONS",
     period: "Mai 2025 – Août 2025",
     location: "Casablanca, Maroc",
-    context: "Pilotage d'une application web de gestion des ressources humaines (RH) : gestion des congés, absences, évaluations et fiches de paie. Projet mené en binôme avec le chef de projet au sein d'une équipe de 3 développeurs.",
+    context: "Pilotage d'un projet de développement d'application métier en méthode Agile.",
     missions: [
-      "Planification et suivi de sprints Scrum : grooming du backlog, animation des daily meetings, reporting client",
-      "Rédaction de spécifications fonctionnelles et techniques à partir des besoins métier",
-      "Développement full stack de nouvelles fonctionnalités (Laravel / AngularJS / MySQL)",
-      "Mise en place de tests unitaires et procédures d'assurance qualité"
+      "Animation du projet en Scrum : planification des sprints, backlog, réunions quotidiennes et rétrospectives",
+      "Rédaction de plus de 30 user stories et spécifications fonctionnelles à partir d'ateliers utilisateurs",
+      "Participation au développement de l'application (Laravel, Angular, MySQL, API REST)",
+      "Mise en place de tests unitaires et rédaction de la documentation technique et utilisateur",
+      "Formation de plus de 10 utilisateurs à la prise en main de l'outil"
     ],
-    result: "Livraison d'un module de gestion des congés et absences dans les délais, adopté par plus de 50 collaborateurs. Taux de satisfaction client élevé et amélioration de la fluidité des processus RH.",
-    stack: ["Laravel", "AngularJS", "MySQL", "Jira", "Scrum"]
+    stack: ["Gestion de projet", "Scrum", "User stories", "Spécifications fonctionnelles", "Formation des utilisateurs"]
   },
   {
     id: 4,
@@ -77,72 +75,60 @@ export const projects = [
     company: "Yulia Group",
     period: "Janvier 2024 – Juin 2024",
     location: "Casablanca, Maroc",
-    context: "Développement d'une application web full stack pour la gestion de chantiers : suivi des tâches, planification des équipes, gestion des matériaux et reporting d'avancement.",
+    context: "Conception d'une application web de gestion de chantiers.",
     missions: [
-      "Développement du frontend avec React.js (architecture de composants, state management)",
-      "Conception et implémentation d'API RESTful avec Laravel",
-      "Modélisation et optimisation d'une base de données MySQL",
-      "Déploiement sur AWS EC2 avec Docker, intégration continue avec Git"
+      "Développement de l'application : React.js côté interface, Laravel côté serveur, MySQL pour les données",
+      "Conception du modèle de données et optimisation des requêtes",
+      "Création d'API REST sécurisées, documentées avec Postman",
+      "Interfaces adaptées à l'ordinateur, la tablette et le mobile",
+      "Travail en équipe Agile (Jira, Miro) et déploiement sur AWS avec Docker et Git"
     ],
-    result: "Application déployée en production, utilisée par une dizaine de chefs de chantier et conducteurs de travaux. Gain de temps significatif dans le suivi quotidien et la communication entre équipes.",
-    stack: ["React.js", "Laravel", "MySQL", "Docker", "AWS EC2", "Git"]
+    stack: ["Laravel", "React.js", "MySQL", "API REST", "Docker"]
   },
   {
     id: 5,
-    title: "Développeur Full Stack",
+    title: "Développeur Web Full Stack",
     company: "RADEETA",
     period: "Avril 2023 – Mai 2023",
     location: "Taza, Maroc",
-    context: "Conception et développement d'une application web full stack pour la gestion du parc informatique d'un établissement public (inventaire, affectation, suivi).",
+    context: "Développement d'une application de gestion du matériel informatique.",
     missions: [
-      "Développement full stack avec React.js (frontend) et Laravel (backend API REST)",
-      "Modélisation UML / MERISE et implémentation d'une base de données MySQL",
-      "Mise en place d'un système d'authentification et de gestion des rôles (admin, technicien, utilisateur)",
-      "Participation au cycle complet (dev → tests → recette) et déploiement en environnement de test"
+      "Analyse du besoin et modélisation de la base de données avec UML et MERISE",
+      "Développement de l'application avec Laravel (PHP) et React.js",
+      "Livraison d'une application fonctionnelle et utilisée en production"
     ],
-    result: "Application livrée et validée, réduisant les erreurs de saisie de 80 % et offrant un suivi en temps réel du matériel. En cours d'intégration au SI de l'établissement.",
-    stack: ["React.js", "Laravel", "MySQL", "UML", "Git"]
+    stack: ["PHP", "Laravel", "MySQL", "UML", "MERISE"]
   }
 ];
 
+// Compétences issues des expériences professionnelles
 export const skills = {
   erp: {
     title: "ERP & Conseil",
     items: [
       "Dolibarr", "Odoo", "ERP", "AMOA", "Analyse des besoins", "Cahier des charges",
-      "Spécifications fonctionnelles", "Tests fonctionnels", "Recette", "Facture électronique (Factur-X)",
-      "SEPA", "Multi-sociétés", "Formation des utilisateurs", "Documentation"
-    ]
-  },
-  development: {
-    title: "Développement & Programmation",
-    items: [
-      "PHP", "SQL", "Python", "Java", "JavaScript ES6+", "TypeScript", "Kotlin",
-      "Laravel", "Symfony", "React.js", "Angular", "Vue.js", "Node.js", "Express.js", "Flask", "Spring Boot",
-      "Bootstrap", "Material-UI", "MVC", "API REST", "Microservices", "Client-Serveur", "3-tiers"
-    ]
-  },
-  data: {
-    title: "Data & Bases de données",
-    items: [
-      "MySQL", "PostgreSQL", "Oracle", "SQL Server", "MongoDB", "Firebase", "Airtable",
-      "UML/MERISE", "ETL", "Data Pipeline", "Data Warehousing", "Data Lake",
-      "Data Cleaning", "Data Transformation", "Power BI", "Tableaux de bord"
+      "Spécifications fonctionnelles", "Tests fonctionnels", "Recette",
+      "Facture électronique (Factur-X)", "Virements SEPA", "Multi-sociétés"
     ]
   },
   project: {
-    title: "Gestion de projet & DevOps",
+    title: "Gestion de projet",
     items: [
-      "Agile", "Scrum", "Kanban", "Cycle en V", "ITIL", "User stories",
-      "Jira", "Confluence", "Trello", "Git", "GitHub", "GitLab",
-      "Docker", "CI/CD", "AWS", "Linux", "Tests unitaires/intégration"
+      "Gestion de projet", "Scrum", "Méthodes agiles", "User stories", "Ateliers utilisateurs",
+      "Documentation", "Formation des utilisateurs", "ITIL", "Jira", "Miro"
     ]
   },
-  business: {
-    title: "Compétences métier",
+  development: {
+    title: "Développement",
     items: [
-      "Finance et comptabilité", "Achats", "Stock", "Supply Chain", "CRM", "SIRH", "SAP",
-      "Contrôle de gestion", "Analyse financière", "Audit SI", "Digitalisation", "QHSE", "Support utilisateur"
+      "PHP", "SQL", "Laravel", "React.js", "Angular", "API REST", "Python",
+      "Hooks et triggers Dolibarr", "Tests unitaires"
+    ]
+  },
+  data: {
+    title: "Données & DevOps",
+    items: [
+      "MySQL", "UML", "MERISE", "Git", "GitLab", "CI/CD", "Docker", "AWS", "Postman"
     ]
   }
 };

@@ -134,6 +134,8 @@ header.scrolled {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   width: 100%;
   margin-top: 80px;
 }
@@ -146,11 +148,11 @@ section {
 }
 
 section:nth-child(even) {
-  background-color: var(--bg-secondary);
+  background-color: rgba(15, 15, 15, 0.55);
 }
 
 section:nth-child(odd) {
-  background-color: var(--bg-primary);
+  background-color: transparent;
 }
 
 .container {
@@ -160,6 +162,8 @@ section:nth-child(odd) {
 }
 
 footer {
+  position: relative;
+  z-index: 1;
   width: 100%;
   padding: 3rem 5% 1.5rem;
   background: var(--bg-secondary);
@@ -252,7 +256,9 @@ footer {
 }
 
 .card {
-  background: var(--bg-card);
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);
@@ -264,7 +270,7 @@ footer {
   border-color: var(--accent-primary);
   box-shadow: var(--shadow-glow);
   transform: translateY(-4px);
-  background: var(--bg-card-hover);
+  background: rgba(37, 37, 37, 0.7);
 }
 
 @keyframes fadeIn {
@@ -344,5 +350,58 @@ footer {
   
   .header-container {
     padding: 0;
+  }
+}
+/* Apparition des éléments au scroll (classe ajoutée par App.jsx) */
+.card,
+.skill-category,
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card.animate-in,
+.skill-category.animate-in,
+.timeline-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card.animate-in:hover {
+  transform: translateY(-4px);
+}
+
+/* Les cartes d'une même grille apparaissent l'une après l'autre */
+.projects-grid > :nth-child(2),
+.skills-grid > :nth-child(2) { transition-delay: 0.1s; }
+.projects-grid > :nth-child(3),
+.skills-grid > :nth-child(3) { transition-delay: 0.2s; }
+.projects-grid > :nth-child(4),
+.skills-grid > :nth-child(4) { transition-delay: 0.3s; }
+
+/* Titres de section soulignés par un trait lumineux */
+.section-title {
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  box-shadow: 0 0 12px var(--accent-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .skill-category,
+  .timeline-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

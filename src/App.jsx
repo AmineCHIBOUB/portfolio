@@ -8,6 +8,7 @@ import Journey from './components/sections/Journey';
 import Contact from './components/sections/Contact';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import Background from './components/layout/Background';
 
 const App = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <Background />
       <Header />
       <main>
         <Hero />

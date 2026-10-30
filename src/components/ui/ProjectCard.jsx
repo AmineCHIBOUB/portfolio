@@ -9,7 +9,7 @@ const ProjectCard = ({ project }) => {
         <div className="project-meta">
           <span className="project-company">{project.company}</span>
           <span className="project-period">{project.period}</span>
-          <span className="project-location">{project.location}</span>
+          {project.location && <span className="project-location">{project.location}</span>}
         </div>
       </div>
 
@@ -26,13 +26,15 @@ const ProjectCard = ({ project }) => {
         </ul>
       </div>
 
-      <div className="project-result">
-        <h4>Résultat</h4>
-        <p className="result-highlight">{project.result}</p>
-      </div>
+      {project.result && (
+        <div className="project-result">
+          <h4>Résultat</h4>
+          <p className="result-highlight">{project.result}</p>
+        </div>
+      )}
 
       <div className="project-stack">
-        <h4>Stack technique</h4>
+        <h4>Compétences</h4>
         <div className="stack-tags">
           {project.stack.map((tech, index) => (
             <span key={index} className="badge">{tech}</span>
